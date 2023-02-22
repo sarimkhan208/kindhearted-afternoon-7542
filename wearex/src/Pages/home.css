@@ -1,0 +1,15 @@
+
+.hover-image figure img {
+	-webkit-transform: scale(1);
+	transform: scale(0.95);
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+}
+.hover-image figure:hover img {
+	-webkit-transform: scale(0.1);
+	transform: scale(1);
+    cursor: pointer;
+}
+
+
+  
