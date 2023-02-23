@@ -7,9 +7,11 @@ export default function AuthContextProvider({children}){
 
 
     const [isAuth , setIsAuth] = useState(false)
+    const [product,setProduct] = useState("")
+
+    
     const login =()=>{
         setIsAuth(true)
-        {<Navigate to='/' />}
     }
     const logout = () =>{
         setIsAuth(false)
@@ -18,7 +20,7 @@ export default function AuthContextProvider({children}){
 
 
 
-    return <AuthContext.Provider value={{isAuth , login , logout}} >
+    return <AuthContext.Provider value={{isAuth , login , logout,product,setProduct}} >
         {children}
     </AuthContext.Provider>
 }

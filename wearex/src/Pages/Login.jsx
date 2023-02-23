@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios'
-import { Navigate } from 'react-router-dom';
+import {Navigate, useNavigate } from 'react-router-dom';
 import WrongAlert from '../LoginComponents/WrongAlert';
 import { Alert , AlertIcon , AlertDescription , AlertTitle } from "@chakra-ui/react"
 import { AuthContext } from '../Context/AuthContext';
@@ -25,29 +25,20 @@ import { AuthContext } from '../Context/AuthContext';
 
     const [email,setEmail] = useState("");
     const [password , setPassword] = useState("");
+    const {isAuth , login} = useContext(AuthContext)
 
-    const {isAuth , login , logout} = useContext(AuthContext)
+    let navigate = useNavigate()
 
-    const getData = ()=>{
-        axios({
-            method : 'post',
-            url : "https://reqres.in/api/login",
-            data : {
-                email,
-                password
-            }
-        }).then((res)=>
-            login()
-        )
-        .catch((err)=>console.log(err))
-    }
+    
 
     const handleSubmit = (e)=>{
-        e.preventDefault()
-        getData()
+      e.preventDefault()
+      login()
+      alert("Login Successfull")
+      navigate("/")
+      
     }
-
-
+    
 
     return (
       <Flex
@@ -57,9 +48,9 @@ import { AuthContext } from '../Context/AuthContext';
         bg={useColorModeValue('gray.50', 'gray.800')}>
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
-            <Heading fontSize={'4xl'}>Sign in to your account</Heading>
+            <Heading fontSize={'4xl'}>Login</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
+              Wearex takes your <Link color={'blue.400'}>Privacy & Policy</Link> 
             </Text>
           </Stack>
           <Box
@@ -86,18 +77,19 @@ import { AuthContext } from '../Context/AuthContext';
                 </Stack>
                 <Button
                 onClick={handleSubmit}
-                  bg={'blue.400'}
+                  bg={'gray.700'}
                   color={'white'}
                   _hover={{
-                    bg: 'blue.500',
+                    bg: 'Gray.500',
                     
                   }}>
-                  Sign in
+                  Login in
                 </Button>
               </Stack>
             </Stack>
           </Box>
         </Stack>
       </Flex>
+      
     );
   }
