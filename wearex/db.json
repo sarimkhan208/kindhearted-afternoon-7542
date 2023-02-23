@@ -1,14 +1,147 @@
 {
-    "sliderImages" : [
-        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-P1-Puma-4060.jpg",
-        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-P2-Levis-Flat50Extra10.jpg",
-        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-P3-Adidas-4060.jpg",
-        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-P4-Campus-Upto60.jpg",
-        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-P5-Spykar-4070.jpg",
-        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-P6-Nike-Upto50.jpg",
-        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-P7-AX-3050.jpg",
-        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-P8-Budajeans-Starting499.jpg",
-        "https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-P9-MnS-Min30.jpg"
-    
+    "mensProduct" : [
+        {   "id" : 1,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/j/t/a/xxl-black-shirts-ftc-fashions-original-imagm2cuu9uzpw94.jpeg?q=70",
+            "title" : "FTC FASHIONS",
+            "category" : "Shirt",
+            "price" : "₹299"
+        },
+        {   "id" : 2,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/9/7/r/l-sws4121-allan-peter-original-imagkfhncdkryngs.jpeg?q=70",
+            "title" : "allan peter",
+            "category" : "Shirt",
+            "price" : "₹399"
+        },
+        {   "id" : 3,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/o/t/z/xl-kcsh-110-pp-3-fubar-original-imafzzs3jx6nhjep-bb.jpeg?q=70",
+            "title" : "FUBAR",
+            "category" : "Shirt",
+            "price" : "₹399"
+        },
+        {   "id" : 4,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/j/c/n/xl-kcsh-110-dusty-grn-fubar-original-imaghkghaheed2mk.jpeg?q=70",
+            "title" : "FUBAR",
+            "category" : "Shirt",
+            "price" : "₹399"
+        },
+        {   "id" : 5,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/knhsgi80/shirt/2/v/n/xl-sksh-bb110-xl-ye-3-fubar-original-imag263ywfdmxgxa.jpeg?q=70",
+            "title" : "allan peter",
+            "category" : "Shirt",
+            "price" : "₹699"
+        },
+        {   "id" : 6,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/k70spzk0/jean/y/m/g/30-000878-highlander-original-imafpchp9fqdsqjg.jpeg?q=70",
+            "title" : "HIGHLANDER",
+            "category" : "Jeans",
+            "price" : "₹699"
+        },
+        {   "id" : 7,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/kwzap3k0/jean/h/q/8/36-lrdncsspy42461-louis-philippe-original-imag9jhhv7zzczr9.jpeg?q=70",
+            "title" : "LOUIS PHILIPPE",
+            "category" : "Jeans",
+            "price" : "₹2,099"
+        },
+        {   "id" : 8,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/jean/x/w/x/36-jk2-mjrp-02-zaysh-original-imag4cenmcfyfhfk-bb.jpeg?q=70",
+            "title" : "ZAYSH",
+            "category" : "Jeans",
+            "price" : "₹499"
+        },
+        {   "id" : 9,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/kthjy4w0/jean/f/c/v/36-hljn001534-highlander-original-imag6thzhpqe4hzf.jpeg?q=70",
+            "title" : "HIGHLANDER",
+            "category" : "Jeans",
+            "price" : "₹1,259"
+        },
+        {   "id" : 10,
+            "image" : "https://rukminim1.flixcart.com/image/612/612/l3xcr680/jean/k/m/4/32-kmjnrd427-grey-numero-uno-original-imagexv4hzbgncez.jpeg?q=70",
+            "title" : "NUMERO UNO",
+            "category" : "Jeans",
+            "price" : "₹1,099"
+        }
+
+    ],
+
+    "womensProduct" : [
+        { 
+        "id" : 1,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/lehenga-choli/1/g/m/free-full-sleeve-bolly-life-sky-original-imag8z4zmswgnf7c.jpeg?q=70",
+        "title" : "Zinariya Fab",
+        "category" : "Lehnga",
+        "price" : "₹5589"
+        },
+        { 
+        "id" : 2,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/l59xq4w0/lehenga-choli/c/j/z/free-sleeveless-zip1434-zinariya-fab-original-imagfzhhdvehsehk.jpeg?q=70",
+        "title" : "chalisha trends",
+        "category" : "Lehnga",
+        "price" : "₹5889"
+        },
+        { 
+        "id" : 3,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/lehenga-choli/y/6/y/free-3-4-sleeve-sara-3ffz1proo-mayukrishna-original-imaghznzhy3yf5yy.jpeg?q=70",
+        "title" : "color bucket",
+        "category" : "Lehnga",
+        "price" : "₹8889"
+        },
+        { 
+        "id" : 4,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/lehenga-choli/j/s/h/free-half-sleeve-076-nj-xenilla-original-imaggtkfxjathsx2.jpeg?q=70",
+        "title" : "Embroidered Semi ",
+        "category" : "Lehnga",
+        "price" : "₹4565"
+        },
+        { 
+        "id" : 5,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/kdga1zk0/lehenga-choli/w/s/a/free-3-4-sleeve-glam-102-glamave-original-imafuc8hgrypezyp.jpeg?q=70",
+        "title" : "Checkered Semi",
+        "category" : "Lehnga",
+        "price" : "₹4589"
+        },
+        { 
+        "id" : 6,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/l19m93k0/lehenga-choli/r/r/3/free-short-sleeve-sb-velentine-s-b-creation-original-imagcvdgh5ptkwuq.jpeg?q=70",
+        "title" : "SkyTara",
+        "category" : "Lehnga",
+        "price" : "₹7845"
+        },
+        { 
+        "id" : 7,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/ky0g58w0/lehenga-choli/s/4/a/free-full-sleeve-fl-105-jsitaliya-original-imagac3gdzdwy4zx.jpeg?q=70",
+        "title" : "Embroidered Semi Stitched Lehenga Choli",
+        "category" : "Lehnga",
+        "price" : "₹1545"
+        },
+        { 
+        "id" : 8,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/lehenga-choli/k/h/v/free-short-sleeve-amayra-kedar-fab-original-imagms3asryjhdxx.jpeg?q=70",
+        "title" : "chalisha trends",
+        "category" : "Lehnga",
+        "price" : "₹7815"
+        },
+        { 
+        "id" : 9,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/l2xmqvk0/lehenga-choli/a/x/m/free-sleeveless-l8097-anara-original-image5uvub9hh3hz.jpeg?q=70",
+        "title" : "RHET FASHION",
+        "category" : "Lehnga",
+        "price" : "₹1578"
+        },
+        { 
+        "id" : 1,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/kpsnzww0/lehenga-choli/n/s/k/free-3-4-sleeve-re-0000001-bawri-original-imag3yfxtemjygyc.jpeg?q=70",
+        "title" : "Red, Gold",
+        "category" : "Lehnga",
+        "price" : "₹3689"
+        },
+        { 
+        "id" : 1,
+        "image" : "https://rukminim1.flixcart.com/image/612/612/xif0q/lehenga-choli/g/0/m/free-sleeveless-zip1434-zinariya-fab-original-imagnftyaaaqjexa.jpeg?q=70",
+        "title" : "RHET FASHION",
+        "category" : "Lehnga",
+        "price" : "₹2578"
+        }
+
     ]
+    
 }

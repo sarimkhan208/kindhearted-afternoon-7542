@@ -4,9 +4,12 @@ import SlickSlider from "../HomeComponents/SlickSlider";
 import Navbar from "../HomeComponents/Navbar";
 import "./home.css"
 import Footer from "../HomeComponents/Footer";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
 
 export default function Home(){
+    const {isAuth} = useContext(AuthContext);
     
 
     return <div>

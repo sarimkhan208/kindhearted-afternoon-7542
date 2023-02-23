@@ -119,7 +119,7 @@ import {
               <PopoverTrigger>
                 <Link
                   p={2}
-                  href={navItem.href ?? '/product'}
+                  href={navItem.href ?? ''}
                   fontSize={'sm'}
                   fontWeight={500}
                   color={linkColor}
@@ -255,81 +255,83 @@ import {
   const NAV_ITEMS= [
     {
       label: 'Mens',
+      href:'/mensproduct',
       children: [
         {
           label: 'Shirts',
           subLabel: 'Casual Shirts',
-          href: '#',
+          href: '/mensproduct',
         },
         {
           label: 'T-shirts',
           subLabel: 'New Fresh Arrival T-shirts',
-          href: '#',
+          href: '/mensproduct',
         },
         {
             label: 'Jeans',
             subLabel: 'Custom Jeans',
-            href: '#',
+            href: '/mensproduct',
         },
         {
             label: 'FootWears',
             subLabel: 'Stylishing Footwears',
-            href: '#',
+            href: '/mensproduct',
         },
         {
             label: 'Winter Wear',
             subLabel: 'Trending Design of Jackets and Coats',
-            href: '#',
+            href: '/mensproduct',
         },
         {
             label: 'Western Wear',
             subLabel: 'Fresh Arrival Designs of Winter wear',
-            href: '#',
+            href: '/mensproduct',
         },
       ],
     },
     {
         label: 'Womens',
+        href:'/womensproduct',
         children: [
           {
             label: 'Kurtas',
             subLabel: 'Long heads Kurtas',
-            href: '#',
+            href: '/womensproduct',
           },
           {
             label: 'Salwar & Suits',
             subLabel: 'Trending Simple Salvar & Suits',
-            href: '#',
+            href: '/womensproduct',
           },
           {
               label: 'Sarees',
               subLabel: 'Banasrsi Sarees Collection',
-              href: '#',
+              href: '/womensproduct',
           },
           {
               label: 'Lehnga',
               subLabel: 'Bridal & Part Wear Lehnga',
-              href: '#',
+              href: '/womensproduct',
           },
           {
               label: 'Winter Wear',
               subLabel: 'Trending Design of Western Winterwear',
-              href: '#',
+              href: '/womensproduct',
           },
           {
               label: 'Gowns',
               subLabel: 'Fresh Arrival Designs Gowns',
-              href: '#',
+              href: '/womensproduct',
           },
           {
             label: 'Crop Top',
             subLabel: 'Fresh Arrival Designs Crop-Tops',
-            href: '#',
+            href: '/womensproduct',
         },
         {
             label: 'Beauty Products',
             subLabel: 'Cosmetic-Products',
-            href: '#',
+            href: '/womensproduct',
         },
         ],
       },
