@@ -15,25 +15,31 @@ import {
     VisuallyHidden,
     List,
     ListItem,
+    Center,
   } from '@chakra-ui/react';
+
+
 import axios from 'axios';
-import { useContext, useEffect, useState } from 'react';
-  import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-  import { MdLocalShipping } from 'react-icons/md';
+import {useEffect, useState } from 'react';
+import { MdLocalShipping } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
-import { AuthContext } from '../Context/AuthContext';
-import Footer from '../HomeComponents/Footer';
+import Footer from '../Footer/Footer';
+import { PostData } from '../AddtoCart/PostData';
   
-  export default function SingleProductPage() {
+  export default function SingleProductPageMens() {
 
     let {id} = useParams()
-    const {product} = useContext(AuthContext);
+
+    const AddtoCartItem = (id)=>{
+      PostData(id)
+    }
     
     const [data , setData] = useState()
-
+    
 
     function getData(){
-        axios.get(`http://localhost:8080/${product}/${id}`).then((res)=>setData(res.data))
+        axios.get(`http://localhost:8080/mensproduct/${id}`).then((res)=>setData(res.data))
+
     }
 
     useEffect(()=>{
@@ -44,6 +50,7 @@ import Footer from '../HomeComponents/Footer';
     }
 
 
+
     return (
       <Box>
         <Container maxW={'7xl'}>
@@ -51,17 +58,18 @@ import Footer from '../HomeComponents/Footer';
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 18, md: 24 }}>
-          <Flex>
-            <Image
+          <Flex >
+          <Image
               rounded={'md'}
               alt={'product image'}
               src={
-                'https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080'
+                data?data.image:"'https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080'"
               }
-              fit={'cover'}
+              fit='cover'
+              
               align={'center'}
-              w={'100%'}
-              h={{ base: '100%', sm: '400px', lg: '500px' }}
+              w={{ base: '90%', sm: '100%', lg: '100%' }}
+              h={{ base: '100%', sm: '100%', lg: '100%' }}
             />
           </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
@@ -70,13 +78,13 @@ import Footer from '../HomeComponents/Footer';
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                {data.title}
+                  {data?data.title:"title"}
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                $350.00 USD
+                {data?data.price:"price"}
               </Text>
             </Box>
   
@@ -139,46 +147,45 @@ import Footer from '../HomeComponents/Footer';
                 <List spacing={2}>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Between lugs:
+                    Additional Details:
                     </Text>{' '}
-                    20 mm
+                    100% Cotton
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Bracelet:
+                    Care:
                     </Text>{' '}
-                    leather strap
+                    Machine Washable
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Case:
+                    Product ID:
                     </Text>{' '}
-                    Steel
+                    S2788582_C101
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Case diameter:
+                    DELIVERY:
                     </Text>{' '}
-                    42 mm
+                    Standard Home Delivery
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Dial color:
+                    Standard Click & Collect:
                     </Text>{' '}
-                    Black
+                    Your order will arrive in store within 3-5 days.
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Crystal:
+                    RETURNS:
                     </Text>{' '}
-                    Domed, scratch‑resistant sapphire crystal with anti‑reflective
-                    treatment inside
+                    We’ll be happy to exchange or refund within 14 days of purchase
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Water resistance:
+                    By post:
                     </Text>{' '}
-                    5 bar (50 metres / 167 feet){' '}
+                    A delivery charge is applicable.
                   </ListItem>
                 </List>
               </Box>
@@ -196,7 +203,8 @@ import Footer from '../HomeComponents/Footer';
               _hover={{
                 transform: 'translateY(2px)',
                 boxShadow: 'lg',
-              }}>
+              }}
+              onClick={()=>AddtoCartItem(data.id)}>
               Add to cart
             </Button>
   
