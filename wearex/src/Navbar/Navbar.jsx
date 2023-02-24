@@ -14,8 +14,9 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
-    Input,
+    Input,chakra, useConst , Avatar
   } from '@chakra-ui/react';
+  import { FiShoppingCart } from 'react-icons/fi';
   import {
     HamburgerIcon,
     CloseIcon,
@@ -24,9 +25,13 @@ import {
   } from '@chakra-ui/icons';
   
 
-  import {Link as RouterLink } from 'react-router-dom';
+import {Link as RouterLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../Context/AuthContext';
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
+    const {isAuth} = useContext(AuthContext)
+    
   
     return (
       <Box>
@@ -73,28 +78,28 @@ import {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}> 
-            {/* <Button
-              as={'a'}
-              fontSize={'sm'}
-              fontWeight={400}
-              variant={'link'}
-              href={'#'}>
-              Login
-            </Button> */}
+            <chakra.a href={`/cartitem`} display={'flex'}>
+                  <Icon as={FiShoppingCart} h={{base:5,md:7}} w={{base:5,md:7}} alignSelf={'center'} />
+            </chakra.a>
             
             <RouterLink to='/login'>
-            <Button
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={'white'}
-              bg={'gray.600'}
-              _hover={{
-                bg: 'gray.500',
-              }}>
-              Login
-            </Button>
+
+              {
+                isAuth?<Avatar src='https://bit.ly/broken-link' />:<Button
+                display={{ base: 'none', md: 'inline-flex' }}
+                fontSize={'sm'}
+                fontWeight={600}
+                color={'white'}
+                bg={'gray.600'}
+                _hover={{
+                  bg: 'gray.500',
+                }}>
+                Login
+              </Button>
+              }
+            
             </RouterLink>
+            
             
           </Stack>
         </Flex>

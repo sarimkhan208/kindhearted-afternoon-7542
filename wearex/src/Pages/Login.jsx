@@ -15,7 +15,6 @@ import {
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios'
 import {Navigate, useNavigate } from 'react-router-dom';
-import WrongAlert from '../LoginComponents/WrongAlert';
 import { Alert , AlertIcon , AlertDescription , AlertTitle } from "@chakra-ui/react"
 import { AuthContext } from '../Context/AuthContext';
 

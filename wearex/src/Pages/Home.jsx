@@ -1,9 +1,8 @@
 import Carousel from "../HomeComponents/Carousel";
 import MySimpleGrid from "../HomeComponents/SimpleGrids";
-import SlickSlider from "../HomeComponents/SlickSlider";
-import Navbar from "../HomeComponents/Navbar";
+import SlickSlider from '../HomeComponents/SlickSlider'
 import "./home.css"
-import Footer from "../HomeComponents/Footer";
+import Footer from "../Footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 
