@@ -11,6 +11,7 @@ import {
     Heading,
     Text,
     useColorModeValue,
+    useToast,
 } from '@chakra-ui/react';
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios'
@@ -22,6 +23,8 @@ import { AuthContext } from '../Context/AuthContext';
   
   export default function Login() {
 
+    const toast = useToast()
+
     const [email,setEmail] = useState("");
     const [password , setPassword] = useState("");
     const {isAuth , login} = useContext(AuthContext)
@@ -31,9 +34,16 @@ import { AuthContext } from '../Context/AuthContext';
     
 
     const handleSubmit = (e)=>{
+
       e.preventDefault()
       login()
-      alert("Login Successfull")
+      toast({
+        title: 'Login Successfull.',
+        description: "We've created your account for you.",
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+      })
       navigate("/")
       
     }

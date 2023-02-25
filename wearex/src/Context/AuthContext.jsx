@@ -8,6 +8,7 @@ export default function AuthContextProvider({children}){
 
     const [isAuth , setIsAuth] = useState(false)
     const [product,setProduct] = useState("")
+    const [total , setTotal] = useState(0)
 
     
     const login =()=>{
@@ -20,7 +21,7 @@ export default function AuthContextProvider({children}){
 
 
 
-    return <AuthContext.Provider value={{isAuth , login , logout,product,setProduct}} >
+    return <AuthContext.Provider value={{isAuth , login , logout,product,setProduct,total,setTotal}} >
         {children}
     </AuthContext.Provider>
 }

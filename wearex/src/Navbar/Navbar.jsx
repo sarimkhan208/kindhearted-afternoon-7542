@@ -122,9 +122,9 @@ import { AuthContext } from '../Context/AuthContext';
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
               <PopoverTrigger>
-                <Link
+                <RouterLink
                   p={2}
-                  href={navItem.href ?? ''}
+                  to={navItem.href ?? ''}
                   fontSize={'sm'}
                   fontWeight={500}
                   color={linkColor}
@@ -133,7 +133,7 @@ import { AuthContext } from '../Context/AuthContext';
                     color: linkHoverColor,
                   }}>
                   {navItem.label}
-                </Link>
+                </RouterLink>
               </PopoverTrigger>
   
               {navItem.children && (
@@ -342,6 +342,7 @@ import { AuthContext } from '../Context/AuthContext';
       },
       {
         label: 'Kids',
+        href:'/kidsproduct',
         children: [
           {
             label: 'Shirts',
@@ -377,6 +378,7 @@ import { AuthContext } from '../Context/AuthContext';
       },
     {
       label: 'Indie',
+      href:'/mensproduct',
       children: [
         {
           label: 'Job Board',
@@ -389,10 +391,10 @@ import { AuthContext } from '../Context/AuthContext';
           href: '#',
         },
       ],
-      href: '#',
     },
     {
         label: 'Home & Kitchens',
+        href:'/kitchenproduct',
         children: [
           {
             label: 'Job Board',
@@ -405,6 +407,5 @@ import { AuthContext } from '../Context/AuthContext';
             href: '#',
           },
         ],
-        href: '#',
       },
   ];

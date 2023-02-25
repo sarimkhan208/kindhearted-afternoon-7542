@@ -1,49 +1,54 @@
-import { useEffect, useState } from "react"
+import {useEffect, useState } from "react"
 import axios from "axios"
-import { Box, SimpleGrid , Center , Button } from '@chakra-ui/react'
+import { Box, Button, Center, GridItem, SimpleGrid } from '@chakra-ui/react'
+import ProductCardMens from '../ProductCards/ProductCardMens'
 import Footer from "../Footer/Footer"
 import LoadingSkeleton from '../Loading/Skeleton'
-import ProductCardWomens from "../ProductCards/ProdctCardWomen"
+import ProductCardKids from "../ProductCards/ProductCardKids"
+import ProductCardKitchen from "../ProductCards/ProductCardKitchen"
 
-export default function WomensProduct(){
+
+export default function KitchenProduct(){
 
     const [data,setData] = useState([])
-    const [loading,setLoading] = useState(false)
     const [page , setPage] = useState(1)
+    const [loading , setLoading] = useState(false)   
 
-
-    function getData(){
+    function getData(page){
         setLoading(true)
-        axios.get(`http://localhost:8080/womensProduct?_limit=9&_page=${page}`)
+        axios.get(`http://localhost:8080/kitchenproduct?_limit=9&_page=${page}`)
         .then((res)=>{
             let mydata = res.data
             setData(mydata)
             setLoading(false)
         })
     }
+
     const handleClick = (val)=>{
         setPage(page+val)
     }
 
+
     useEffect(()=>{
-        getData()
-    },[])
+        getData(page)
+    },[page])
+
     if(loading){
         return <LoadingSkeleton/>
     }
 
 
-    return (
-        <Box>
+
+    return (<Box>
             <SimpleGrid gap="1px" gridTemplateColumns={{base:'repeat(2,1fr)' , md:'repeat(3 , 1fr)'}} >
-            {
+                {
                     data.map((el)=>(
-                        <ProductCardWomens key={el.id} id={el.id} image={el.image} title={el.title} 
-                        price={el.price} category={el.category} product={"womensproduct"}  isNew={true} rating={4.2} numReviews={842} />
+                        <ProductCardKitchen key={el.id} id={el.id} image={el.image} title={el.title} 
+                        price={el.price} category={el.category}  isNew={true} rating={4.2} numReviews={842} product={"mensproduct"} />
                     ))
                 }
-        </SimpleGrid>
-        <Center>
+            </SimpleGrid>
+           <Center>
            <Button rounded={'none'}
                     onClick={()=>handleClick(-1)}
                     height={{base:"20px",md:"40px"}}
@@ -104,9 +109,10 @@ export default function WomensProduct(){
 
                     >Next</Button>
            </Center>
-        <Footer/>
-        </Box>
-    )
+            <Footer/>
+            
+            </Box>)
+    
 
 
 }

@@ -25,13 +25,17 @@ import {useEffect, useState } from 'react';
 import { MdLocalShipping } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
 import Footer from '../Footer/Footer';
-  
+import { PostData } from '../AddtoCart/PostData';
   export default function SingleProductPageMens() {
 
     let {id} = useParams()
     
     const [data , setData] = useState()
 
+    const AddtoCartItem = (id)=>{
+      alert("Item Successfully Added to Cart")
+      PostData(id)
+    }
 
     function getData(){
         axios.get(`http://localhost:8080/womensproduct/${id}`)
@@ -81,7 +85,7 @@ import Footer from '../Footer/Footer';
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                {data?data.price:"price"}
+                {data?"₹"+data.price:"price"}
               </Text>
             </Box>
   
@@ -197,6 +201,7 @@ import Footer from '../Footer/Footer';
               bg={useColorModeValue('gray.900', 'gray.50')}
               color={useColorModeValue('white', 'gray.900')}
               textTransform={'uppercase'}
+              onClick={()=>AddtoCartItem(data.id)}
               _hover={{
                 transform: 'translateY(2px)',
                 boxShadow: 'lg',
