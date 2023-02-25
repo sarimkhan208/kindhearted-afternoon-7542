@@ -44,7 +44,7 @@ import { PostData } from '../AddtoCart/PostData';
     );
   }
   
-function ProductCardMens({id,image,title,price,isNew , rating , numReviews}) {
+function ProductCardKitchen({id,image,title,price,isNew , rating , numReviews}) {
   
 
   const handleCartItem = (id)=>{
@@ -77,7 +77,7 @@ function ProductCardMens({id,image,title,price,isNew , rating , numReviews}) {
           )}
   
           <Center>
-          <RouterLink to={`/mensproduct/${id}`}>
+          <RouterLink to={`/kitchenproduct/${id}`}>
           <Image
           height={{base : 240 , md : 320}}
           width={{base : "220px" , md :60}}
@@ -97,7 +97,7 @@ function ProductCardMens({id,image,title,price,isNew , rating , numReviews}) {
               )}
             </Box>
             <Flex mt="1" justifyContent="space-between" alignContent="center">
-              <RouterLink to={`/mensproduct/${id}`} >
+              <RouterLink to={`/kitchenproduct/${id}`} >
                 <Box
                   
                   fontSize={{base:"12", md:"23"}}
@@ -134,4 +134,4 @@ function ProductCardMens({id,image,title,price,isNew , rating , numReviews}) {
     );
   }
   
-  export default ProductCardMens;
+  export default ProductCardKitchen;

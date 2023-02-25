@@ -26,7 +26,7 @@ import { useParams } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import { PostData } from '../AddtoCart/PostData';
   
-  export default function SingleProductPageMens() {
+  export default function SingleProductPageKids() {
 
     let {id} = useParams()
 
@@ -39,16 +39,13 @@ import { PostData } from '../AddtoCart/PostData';
     
 
     function getData(){
-        axios.get(`http://localhost:8080/mensproduct/${id}`).then((res)=>setData(res.data))
+        axios.get(`http://localhost:8080/kidsproduct/${id}`).then((res)=>setData(res.data))
 
     }
 
     useEffect(()=>{
         getData()
     },[])
-    {
-        console.log(data)
-    }
 
 
 

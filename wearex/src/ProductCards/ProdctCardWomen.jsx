@@ -15,6 +15,7 @@ import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 import {Link as RouterLink} from 'react-router-dom'
 import { AuthContext } from '../Context/AuthContext';
+import { PostData } from '../AddtoCart/PostData';
   
 
   
@@ -46,7 +47,10 @@ import { AuthContext } from '../Context/AuthContext';
   }
   
 function ProductCardWoMens({id,image,title,category,price,isNew , rating , numReviews , product}) {
-  
+  const handleCartItem = (id)=>{
+    alert("Item Successfully Added to Cart")
+    PostData(id)
+  }
 
     return (
       
@@ -110,7 +114,7 @@ function ProductCardWoMens({id,image,title,category,price,isNew , rating , numRe
                 color={'gray.800'}
                 fontSize={'1.2em'}>
                 <chakra.a href={'#'} display={'flex'}>
-                  <Icon as={FiShoppingCart} h={{base:5,md:7}} w={{base:5,md:7}} alignSelf={'center'} />
+                  <Icon onClick={()=>handleCartItem(id)} as={FiShoppingCart} h={{base:5,md:7}} w={{base:5,md:7}} alignSelf={'center'} />
                 </chakra.a>
               </Tooltip>
             </Flex>
@@ -118,7 +122,7 @@ function ProductCardWoMens({id,image,title,category,price,isNew , rating , numRe
             <Flex justifyContent="space-between" alignContent="center">
               <Rating rating={rating} numReviews={numReviews} />
               <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
-                {price}
+              ₹{price}
               </Box>
             </Flex>
           </Box>

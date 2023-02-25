@@ -15,11 +15,18 @@ import { useContext } from 'react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import {DeleteIcon} from '@chakra-ui/icons'
 import {Link as RouterLink} from 'react-router-dom'
+import { DeleteData } from './DeleteData';
   
 
   
   
-function AddToCartProductCard({id,image,title,price,quantity}) {
+function AddToCartProductCard({getId,id,image,title,price,quantity}) {
+
+
+  const handleDelete = (id)=>{
+    alert("Item Successfully Deleted")
+    getId(id)
+  }
   
   
     return (
@@ -62,9 +69,8 @@ function AddToCartProductCard({id,image,title,price,quantity}) {
                 color={'gray.800'}
                 fontSize={'1.2em'}>
                     
-                <chakra.a href={`/mensproduct/${id}`} display={'flex'}>
-                  {/* <Icon as={DeleteIcon} h={{base:5,md:7}} w={{base:5,md:7}} alignSelf={'center'} /> */}
-                  <DeleteIcon/>
+                <chakra.a  display={'flex'}>
+                  <DeleteIcon onClick={()=>handleDelete(id)} />
                 </chakra.a>
               </Tooltip>
             </Flex>
