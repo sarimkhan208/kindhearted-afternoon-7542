@@ -26,14 +26,23 @@ import { MdLocalShipping } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import { PostData } from '../AddtoCart/PostData';
+import { useToast } from '@chakra-ui/react';
   export default function SingleProductPageMens() {
 
     let {id} = useParams()
     
     const [data , setData] = useState()
 
+    const toast = useToast()
     const AddtoCartItem = (id)=>{
-      alert("Item Successfully Added to Cart")
+      toast({
+        title: 'Item Added To Cart.',
+        description: "Your item has been added to your cart",
+        status: 'success',
+        position : 'top',
+        duration: 3000,
+        isClosable: true,
+      })
       PostData(id)
     }
 

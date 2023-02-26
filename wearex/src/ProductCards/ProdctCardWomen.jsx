@@ -10,11 +10,10 @@ import {
     Tooltip,
     Center,
   } from '@chakra-ui/react';
-import { useContext } from 'react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 import {Link as RouterLink} from 'react-router-dom'
-import { AuthContext } from '../Context/AuthContext';
+import { useToast } from '@chakra-ui/react';
 import { PostData } from '../AddtoCart/PostData';
   
 
@@ -47,8 +46,16 @@ import { PostData } from '../AddtoCart/PostData';
   }
   
 function ProductCardWoMens({id,image,title,category,price,isNew , rating , numReviews , product}) {
+  const toast = useToast()
   const handleCartItem = (id)=>{
-    alert("Item Successfully Added to Cart")
+    toast({
+      title: 'Item Added To Cart.',
+      description: "Your item has been added to your cart",
+      status: 'success',
+      position : 'top',
+      duration: 3000,
+      isClosable: true,
+    })
     PostData(id)
   }
 

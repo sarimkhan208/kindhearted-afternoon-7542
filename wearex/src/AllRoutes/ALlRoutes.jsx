@@ -11,6 +11,7 @@ import KitchenProduct from '../ProductPages/KitchenProduct'
 import SingleProductPageKids from '../SingleProductPage/SingleProductPageKids'
 import SingleProductPageKitchen from '../SingleProductPage/SingleProductPageKitchen'
 import PaymentPage from '../PaymentPage/PaymentPage'
+import OrderPlaced from '../AddtoCart/OrderPlaced'
 
 
 
@@ -32,6 +33,8 @@ export default function AllRoutes(){
 
         <Route path='/cartitem' element={<CartItem/>} ></Route>
         <Route path='/paymentpage' element={<PaymentPage/>} ></Route>
+
+        <Route path='/orderplaced' element={<OrderPlaced/>} ></Route>
     </Routes>
     </>
 }

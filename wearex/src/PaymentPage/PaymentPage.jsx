@@ -11,9 +11,10 @@ import {
     Heading,
     Text,
     useColorModeValue,
-    Select,Option
+    Select,Option,Image
 } from '@chakra-ui/react';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import Footer from '../Footer/Footer';
 
@@ -21,6 +22,12 @@ import Footer from '../Footer/Footer';
   
   export default function PaymentPage() {
     const {total} = useContext(AuthContext)
+
+    let navigate = useNavigate()
+
+    const handleBuyNow = ()=>{
+      return navigate('/orderplaced')
+    }
 
     
 
@@ -79,6 +86,7 @@ import Footer from '../Footer/Footer';
                 <Button
                 
                   bg={'gray.700'}
+                  onClick={()=>handleBuyNow()}
                   color={'white'}
                   _hover={{
                     bg: 'Gray.500',
