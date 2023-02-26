@@ -5,45 +5,47 @@ import "./home.css"
 import Footer from "../Footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
-
+import {Link as RouterLink} from 'react-router-dom'
 
 export default function Home(){
     const {isAuth} = useContext(AuthContext);
+
     
 
     return <div>
-        <Carousel images={AllImagesData.carouselImages.section1} />
+        <RouterLink to='/mensproduct' ><Carousel images={AllImagesData.carouselImages.section1} /></RouterLink>
         <img  className="hover-image" src='https://assets.ajio.com/cms/AJIO/WEB/D1-1440x90-11.jpg' alt='icons'/>
-        <Carousel images={AllImagesData.carouselImages.section2} />
+        <RouterLink  to='/mensproduct'><Carousel images={AllImagesData.carouselImages.section2} /></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SpecieUpYourBrandGame-SectionheaderStrip.jpg' alt='icons'/>
         <Carousel images={AllImagesData.carouselImages.section3} />
         <Carousel images={AllImagesData.carouselImages.section4} />
         <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Rewards-Sectionheader.jpg" alt='name'/>
         <MySimpleGrid images={AllImagesData.MyGridImages.section1} />
-        <SlickSlider images={AllImagesData.SlickSliderImages.section1} />
+        <RouterLink to='/mensproduct' ><SlickSlider images={AllImagesData.SlickSliderImages.section1} /></RouterLink>
         <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-ForHER-Sectionheader.jpg" alt='name'/>
-        <Carousel images={AllImagesData.carouselImages.section5} />
+        <RouterLink to='/mensproduct'><Carousel images={AllImagesData.carouselImages.section5} /></RouterLink>
         <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-JIT-Sectionheader.jpg" alt='name'/>
-        <Carousel images={AllImagesData.carouselImages.section6} />
+        <RouterLink ><Carousel images={AllImagesData.carouselImages.section6} /></RouterLink>
         <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-AjioExclusives-Sectionheader.jpg" alt="name" />
-        <SlickSlider images={AllImagesData.SlickSliderImages.section2}/>
+        <RouterLink to='/womensproduct' ><SlickSlider images={AllImagesData.SlickSliderImages.section2}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/UHP-AJIOBeauty-1440x397.jpg' alt="name" />
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-JIT-SectionHeaderStrip.jpg' alt='name' />
-        <Carousel images={AllImagesData.carouselImages.section7}/>
+        <RouterLink to='/mensproduct' ><Carousel images={AllImagesData.carouselImages.section7}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Westernwear-Sectionheader.jpg' alt='name' />
-        <SlickSlider images={AllImagesData.SlickSliderImages.section3}/>
+        <RouterLink to='/womensproduct'><SlickSlider images={AllImagesData.SlickSliderImages.section3}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-ForHER-Sectionheader.jpg' alt='name' />
-        <Carousel images={AllImagesData.carouselImages.section8}/>
+        
+        <RouterLink to='mensproduct' ><Carousel images={AllImagesData.carouselImages.section8}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-ForHIM-Sectionheader.jpg' alt='name' />
-        <Carousel images={AllImagesData.carouselImages.section9}/>
+        <RouterLink to='womensproduct' ><Carousel images={AllImagesData.carouselImages.section9}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-FEthnicwear-Sectionheader.jpg' alt='name' />
-        <SlickSlider images={AllImagesData.SlickSliderImages.section4}/>
+        <RouterLink to='womensproduct' ><SlickSlider images={AllImagesData.SlickSliderImages.section4}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Accessories-SectionHeader.jpg' alt='name' />
-        <SlickSlider images={AllImagesData.SlickSliderImages.section5}/>
+        <RouterLink to='kidsproduct' ><SlickSlider images={AllImagesData.SlickSliderImages.section5}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-HiddenGems-SectionHeader.jpg' alt='name' />
-        <SlickSlider images={AllImagesData.SlickSliderImages.section6}/>
+        <RouterLink to='womensproduct' ><SlickSlider images={AllImagesData.SlickSliderImages.section6}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Kidswear-SectionHeader.jpg' alt='name' />
-        <SlickSlider images={AllImagesData.SlickSliderImages.section7}/>
+        <RouterLink to='kidsproduct' ><SlickSlider images={AllImagesData.SlickSliderImages.section7}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/Discover%20Online%20Stnkores%20(D).jpg' alt='name' />
         <Footer/>
     </div>

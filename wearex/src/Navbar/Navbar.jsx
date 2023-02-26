@@ -36,6 +36,7 @@ import { AuthContext } from '../Context/AuthContext';
     return (
       <Box>
         <Flex
+          
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
@@ -161,8 +162,8 @@ import { AuthContext } from '../Context/AuthContext';
   
   const DesktopSubNav = ({ label, href, subLabel }) => {
     return (
-      <Link
-        href={href}
+      <RouterLink
+        to={href}
         role={'group'}
         display={'block'}
         p={2}
@@ -188,7 +189,7 @@ import { AuthContext } from '../Context/AuthContext';
             flex={1}>
           </Flex>
         </Stack>
-      </Link>
+      </RouterLink>
     );
   };
   

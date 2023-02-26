@@ -41,6 +41,7 @@ import { AuthContext } from '../Context/AuthContext';
         title: 'Login Successfull.',
         description: "We've created your account for you.",
         status: 'success',
+        position : 'top',
         duration: 2000,
         isClosable: true,
       })

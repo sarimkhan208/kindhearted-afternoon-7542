@@ -14,6 +14,7 @@ import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 import {Link as RouterLink} from 'react-router-dom'
 import { PostData } from '../AddtoCart/PostData';
+import { useToast } from '@chakra-ui/react';
   
 
   function Rating({ rating, numReviews }) {
@@ -45,8 +46,16 @@ import { PostData } from '../AddtoCart/PostData';
 function ProductCardKids({id,image,title,price,isNew , rating , numReviews}) {
   
 
+  const toast = useToast()
   const handleCartItem = (id)=>{
-    alert("Item Successfully Added to Cart")
+    toast({
+      title: 'Item Added To Cart.',
+      description: "Your item has been added to your cart",
+      status: 'success',
+      position : 'top',
+      duration: 3000,
+      isClosable: true,
+    })
     PostData(id)
   }
   

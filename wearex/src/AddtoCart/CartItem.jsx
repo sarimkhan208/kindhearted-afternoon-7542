@@ -64,6 +64,8 @@ export default function CartItem(){
     }
 
     
+
+    
     
     
 
@@ -85,6 +87,7 @@ export default function CartItem(){
                 <Button
                 rounded={'none'}
                 bg='gray.900'
+                
                 mb='25px'
                 color='white'
                 border='1px'
