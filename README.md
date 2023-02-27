@@ -1,9 +1,9 @@
 # kindhearted-afternoon-7542
-tech stack - REACT.JS CSS CHAKRA UI 
-Github Link - https://github.com/sarimkhan208/kindhearted-afternoon-7542 <br>
-Deploy Link - https://wearex.vercel.app/
+tech stack - REACT.JS CSS CHAKRA UI <br/>
+Github Link - https://github.com/sarimkhan208/kindhearted-afternoon-7542  <br/>
+Deploy Link - https://wearex.vercel.app/  <br/>
 
-All pages - 
+<h2>All pages -</h2> 
 1) Navbar
 2) Index Page
 3) Prodcut Page
