@@ -6,6 +6,7 @@ import LoadingSkeleton from '../Loading/Skeleton'
 import ProductCardWomens from "../ProductCards/ProdctCardWomen"
 import { Accordion,AccordionButton,AccordionItem,AccordionIcon,AccordionPanel,Link } from "@chakra-ui/react"
 import ProductCardWoMens from "../ProductCards/ProdctCardWomen"
+import { BaseURL } from "../BaseURL/BaseURL"
 
 
 
@@ -19,7 +20,7 @@ export default function WomensProduct(){
 
     function getData(){
         setLoading(true)
-        axios.get(`http://localhost:8080/womensProduct?_limit=9&_page=${page}&_sort=price&_order=${order}`)
+        axios.get(`${BaseURL}/womensProduct?_limit=9&_page=${page}&_sort=price&_order=${order}`)
         .then((res)=>{
             let mydata = res.data
             setData(mydata)

@@ -7,11 +7,13 @@ import { DeleteData } from "./DeleteData"
 import {Link as RouterLink } from 'react-router-dom'
 import { AuthContext } from "../Context/AuthContext"
 import Footer from "../Footer/Footer"
+import { BaseURL } from "../BaseURL/BaseURL"
 
 export default function CartItem(){
     const [data,setData] = useState([])
     const [loading,setLoading] = useState(false)
     const [flag,setFlag] = useState(false)
+    
     
     const {total,setTotal} = useContext(AuthContext)
     
@@ -20,7 +22,7 @@ export default function CartItem(){
     const getData = ()=>{
 
       setLoading(true)
-      axios.get(`http://localhost:8080/key`)
+      axios.get(`${BaseURL}/key`)
       .then((res)=>{
         res.data.length!=0?setData(res.data):setData(false)
 

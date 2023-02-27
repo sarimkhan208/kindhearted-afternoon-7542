@@ -26,6 +26,7 @@ import { useParams } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import { PostData } from '../AddtoCart/PostData';
 import { useToast } from '@chakra-ui/react';
+import { BaseURL } from '../BaseURL/BaseURL';
   
   export default function SingleProductPageMens() {
 
@@ -48,7 +49,7 @@ import { useToast } from '@chakra-ui/react';
     
 
     function getData(){
-        axios.get(`http://localhost:8080/mensproduct/${id}`).then((res)=>setData(res.data))
+        axios.get(`${BaseURL}/mensproduct/${id}`).then((res)=>setData(res.data))
 
     }
 

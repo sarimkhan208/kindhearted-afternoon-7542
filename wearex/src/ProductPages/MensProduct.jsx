@@ -5,6 +5,7 @@ import ProductCardMens from '../ProductCards/ProductCardMens'
 import Footer from "../Footer/Footer"
 import LoadingSkeleton from '../Loading/Skeleton'
 import { Accordion,AccordionButton,AccordionItem,AccordionIcon,AccordionPanel,Link } from "@chakra-ui/react"
+import { BaseURL } from "../BaseURL/BaseURL"
 
 
 export default function MensProduct(){
@@ -17,7 +18,7 @@ export default function MensProduct(){
 
     function getData(page,order){
         setLoading(true)
-        axios.get(`http://localhost:8080/mensProduct?_limit=9&_page=${page}&_sort=price&_order=${order}`)
+        axios.get(`${BaseURL}/mensProduct?_limit=9&_page=${page}&_sort=price&_order=${order}`)
         .then((res)=>{
             let mydata = res.data
             setData(mydata)
@@ -435,7 +436,7 @@ export default function MensProduct(){
 
 //     function getData(page){
 //         setLoading(true)
-//         axios.get(`http://localhost:8080/mensProduct?_limit=9&_page=${page}`)
+//         axios.get(`${BaseURL}/mensProduct?_limit=9&_page=${page}`)
 //         .then((res)=>{
 //             let mydata = res.data
 //             setData(mydata)

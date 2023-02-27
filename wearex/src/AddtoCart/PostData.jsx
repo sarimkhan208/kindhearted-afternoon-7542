@@ -1,4 +1,5 @@
 import axios from "axios"
+import { BaseURL } from "../BaseURL/BaseURL";
 
 export const  PostData = (id)=>{
   let category;
@@ -14,7 +15,7 @@ export const  PostData = (id)=>{
   if(id>=91 &&  id<=120){
     category="womensproduct"
   }
-    axios.get(`http://localhost:8080/${category}/${id}`)
+    axios.get(`${BaseURL}/${category}/${id}`)
     .then((res)=>
       postData(res.data)
     )
@@ -22,7 +23,7 @@ export const  PostData = (id)=>{
     function postData(obj){
         axios({
           method : 'post',
-          url : `http://localhost:8080/key`,
+          url : `${BaseURL}/key`,
           data : obj
         })
       }

@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer"
 import LoadingSkeleton from '../Loading/Skeleton'
 import ProductCardKitchen from "../ProductCards/ProductCardKitchen"
 import { Accordion,AccordionButton,AccordionItem,AccordionIcon,AccordionPanel,Link } from "@chakra-ui/react"
+import { BaseURL } from "../BaseURL/BaseURL"
 
 
 
@@ -19,7 +20,7 @@ export default function KitchenProduct(){
 
     function getData(page){
         setLoading(true)
-        axios.get(`http://localhost:8080/kitchenproduct?_limit=9&_page=${page}&_sort=price&_order=${order}`)
+        axios.get(`${BaseURL}/kitchenproduct?_limit=9&_page=${page}&_sort=price&_order=${order}`)
         .then((res)=>{
             let mydata = res.data
             setData(mydata)
