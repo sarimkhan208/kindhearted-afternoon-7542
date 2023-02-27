@@ -112,6 +112,13 @@
   <h1>Footer-<h1>
 
    ![Screenshot (731)](https://user-images.githubusercontent.com/103326809/221516672-fc6df231-359e-401a-8a39-a2528d283c42.png)
+   
+   
+   <h1>Functionality added</h1>
+   <li>Sorting</li>
+   <li>Deleting Product</li>
+   <li>Authentication</li>
+   <li>Adding tem to Cart</li>
 
    
    
