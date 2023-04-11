@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid,Image,Button , Center, HStack, Text, Icon } from "@chakra-ui/react"
+import { Box, Heading, SimpleGrid,Image,Button , Center, HStack, Text, Icon, useToast } from "@chakra-ui/react"
 import {useEffect, useState } from "react"
 import AddToCartProductCard from './AddTocartPoductCart'
 import LoadingSkeleton from "../../Loading/Skeleton"
@@ -8,11 +8,10 @@ import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import {RiDeleteBin6Line} from 'react-icons/ri'
 import { UPDATE_CART_QUANTITY } from "../../Redux/Cart/actionType"
-
 export default function CartItem(){
 
 
-
+  const toast = useToast()
     const dispatch = useDispatch()
     const data = useSelector((state)=>state.cartReducer.data)
 
@@ -32,10 +31,18 @@ export default function CartItem(){
     },[flag])
 
     const handleDelete = (id)=>{
+      
       deleteCartItem(id).then(()=>dispatch(getCartData))
+      toast({
+        title: 'Item Deleted from the Cart.',
+        description: "Your item has been Deleted from your cart",
+        status: 'error',
+        position : 'top',
+        duration: 3000,
+        isClosable: true,
+      })
       setFlag(!flag)
     }
-
     const handleUpdateQty = (value,id) =>{
       value = Number(value)
       updateQuantity(value,id).then(()=>dispatch(getCartData))
@@ -86,7 +93,7 @@ export default function CartItem(){
                                 <option value='5' >5</option>
                             </select>
                           </Box>
-                          <Icon onClick={()=>handleDelete(el.id)} mr={{base:"10px" ,sm:"500px"}} fontSize={'17px'} mt={4} as={RiDeleteBin6Line} />
+                          <Icon _hover={{cursor:'pointer'}} onClick={()=>handleDelete(el.id)} mr={{base:"10px" ,sm:"500px"}} fontSize={'17px'} mt={4} as={RiDeleteBin6Line} />
                         </HStack>
                       </Box>
                   </HStack>

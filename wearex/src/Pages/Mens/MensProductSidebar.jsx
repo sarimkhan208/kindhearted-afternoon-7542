@@ -16,7 +16,6 @@ const MensProductSidebar = () => {
   const [color,setColor] = useState(initailColor || [])
   const [priceRange,setPriceRange] = useState(initialOrder || '')
   const [order,setorder] = useState(initialPriceRange || '')
-  console.log(initialCategory)
 
   const handleCategory = (e)=>{
     let newCategory = [...category]

@@ -29,10 +29,7 @@ export const getCartData = (dispatch)=>{
 
 
 export const deleteCartItem = (id)=>{
-    return axios({
-        method : 'delete',
-        url : `${BaseURL}/key/${id}`,
-    })
+    return axios.delete(`${BaseURL}/key/${id}`)
 }
 
 export const updateQuantity = (value,id)=>{

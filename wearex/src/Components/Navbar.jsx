@@ -32,14 +32,13 @@ import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
-    const {isAuth} = useContext(AuthContext)
-    const [cartItem,setCartItem] = useState("")
+    const {isAuth,logout} = useContext(AuthContext)
 
-    useEffect(()=>{
-      axios.get(`${BaseURL}/key`)
-      .then((res)=>setCartItem(res.data.length))
-      .catch((err)=>console.log(err))
-    },[])
+    const handleLogout = ()=>{
+      logout()
+    }
+
+    
     
   
     return (
@@ -89,30 +88,31 @@ import { AuthContext } from '../Context/AuthContext';
             direction={'row'}
             spacing={6}> 
                  <RouterLink to='/cartitem' >
-                  <Box display='flex' >
-                    <Icon as={FiShoppingCart} h={{base:5,md:7}} w={{base:5,md:7}} alignSelf={'center'} />
-                    <Box mb={6} pl={1} rounded='full' bg='red' height='17px' width='17px' fontSize='13px'color='white' >{cartItem}</Box>
+                  <Box display='flex' mt={3} >
+                    <Icon  as={FiShoppingCart} h={{base:5,md:7}} w={{base:5,md:7}} alignSelf={'center'} />
                   </Box>
                  </RouterLink>
             
             
-            <RouterLink to='/login'>
+            
 
               {
-                isAuth?<Avatar src='https://bit.ly/broken-link' />:<Button
-                display={{ base: 'none', md: 'inline-flex' }}
-                fontSize={'sm'}
+                isAuth?<Avatar onClick={handleLogout} mt={{base:2,sm:1}} width={{base:'30px' , sm:'40px'}} height={{base:'30px' , sm:'40px'}} src='https://bit.ly/broken-link' />:<RouterLink to='/login'><Button
+                display={{ base: 'inline-flex', md: 'inline-flex' }}
+                fontSize={{base:'10px',sm:'sm'}}
                 fontWeight={600}
-                color={'white'}
-                bg={'gray.600'}
+                color={'gray.600'}
+                bg={'white'}
+                width={{base:'30px',sm:'45px'}}
                 _hover={{
-                  bg: 'gray.500',
+                  bg: 'gray.200',
                 }}>
                 Login
               </Button>
+              </RouterLink>
               }
             
-            </RouterLink>
+            
             
             
           </Stack>

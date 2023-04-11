@@ -614,7 +614,7 @@
       "brand": "LEVIS",
       "color": "white",
       "title": "Men's Striped Spread Collar Shirt",
-      "category": "Shirt",
+      "category": " ",
       "price": 2599,
       "discount": 35,
       "lineThroughPrice": 4099,
@@ -1149,10 +1149,10 @@
   "key": [
     {
       "id": 6,
-      "image": "https://imagescdn.allensolly.com/img/app/product/7/708224-7707165.jpg?q=75&auto=format&w=342",
+      "image": "https://cdn00.nnnow.com/web-images/large/styles/JWZCCKOVYO6/1667899723579/1.jpg",
       "brand": "FLYING MACHINE",
       "color": "black",
-      "title": "Kids Blue Ribbed Crew Neck Printed T-Shirt",
+      "title": "Men Blue Ribbed Crew Neck Printed T-Shirt",
       "category": "T-Shirt",
       "price": 1099,
       "discount": 50,
@@ -1161,25 +1161,13 @@
     },
     {
       "id": 18,
-      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS-ROWhxcjjC7puNJyfYUDTwuAa-Otj1ecPrmO-fpv9UekNCH_3qJK-CnBaI9_9d5NfbUmlgWsCA6I&usqp=CAc",
-      "brand": "LEVIS",
-      "color": "black",
-      "title": "KID'S LOGO BLACK CREW NECK T-SHIRT",
-      "category": "T-Shirt",
-      "price": 903,
-      "discount": 25,
-      "lineThroughPrice": 1099,
-      "quantity": 1
-    },
-    {
-      "id": 2,
-      "image": "https://static01.manyavar.com/uploads/dealimages/14453/zoomimages/ULB4385-415-422_01.JPG",
-      "color": "red",
-      "title": "Plum and Pink Embroidered Lehenga",
-      "category": "Lehnga",
-      "price": 19999,
-      "discount": 10,
-      "lineThroughPrice": 21999,
+      "image": "https://cdn.shopify.com/s/files/1/0637/4834/1981/products/pink-bandhani-printed-rayon-kurti-pant-set-with-dupatta-peachmode-1.jpg?v=1669055712",
+      "color": "pink",
+      "title": "Pink Bandhani Printed Rayon Kurti Pant Set With Dupatta",
+      "category": "Suit",
+      "price": 1249,
+      "discount": 20,
+      "lineThroughPrice": 1899,
       "quantity": 1
     }
   ]
