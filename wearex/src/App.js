@@ -1,17 +1,15 @@
-import AllRoutes from './AllRoutes/ALlRoutes';
 import './App.css';
-import Navbar from './Navbar/Navbar';
-
-
-
+import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
+import AllRouting from './AllRouting';
 
 function App() {
 
   return (
     <>
-
-    <Navbar/>
-    <AllRoutes/>
+      <Navbar/>
+      <AllRouting/>
+      <Footer/>
     </>
   );
 }

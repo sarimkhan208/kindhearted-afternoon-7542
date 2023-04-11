@@ -9,6 +9,7 @@ export default function AuthContextProvider({children}){
     const [isAuth , setIsAuth] = useState(false)
     const [product,setProduct] = useState("")
     const [total , setTotal] = useState(0)
+    const [adminIsAuth,setAminIsAuth] = useState(false)
 
     
     const login =()=>{
@@ -17,11 +18,14 @@ export default function AuthContextProvider({children}){
     const logout = () =>{
         setIsAuth(false)
     }
+    const AdminLogin = ()=>{
+        setAminIsAuth(true)
+    }
 
 
 
 
-    return <AuthContext.Provider value={{isAuth , login , logout,product,setProduct,total,setTotal}} >
+    return <AuthContext.Provider value={{isAuth , login,adminIsAuth,AdminLogin , logout,product,setProduct,total,setTotal}} >
         {children}
     </AuthContext.Provider>
 }

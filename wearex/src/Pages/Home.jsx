@@ -1,16 +1,9 @@
-import Carousel from "../HomeComponents/Carousel";
-import MySimpleGrid from "../HomeComponents/SimpleGrids";
-import SlickSlider from '../HomeComponents/SlickSlider'
-import "./home.css"
-import Footer from "../Footer/Footer";
-import { useContext } from "react";
-import { AuthContext } from "../Context/AuthContext";
+import "../Components/HomeComponents/home.css"
+import MySimpleGrid from "../Components/HomeComponents/SimpleGrids";
+import SlickSlider from '../Components/HomeComponents/SlickSlider'
 import {Link as RouterLink} from 'react-router-dom'
-
+import Carousel from "../Components/HomeComponents/Carousel"
 export default function Home(){
-    const {isAuth} = useContext(AuthContext);
-
-    
 
     return <div>
         <RouterLink to='/mensproduct' ><Carousel images={AllImagesData.carouselImages.section1} /></RouterLink>
@@ -47,7 +40,6 @@ export default function Home(){
         <img src='https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Kidswear-SectionHeader.jpg' alt='name' />
         <RouterLink to='kidsproduct' ><SlickSlider images={AllImagesData.SlickSliderImages.section7}/></RouterLink>
         <img src='https://assets.ajio.com/cms/AJIO/WEB/Discover%20Online%20Stnkores%20(D).jpg' alt='name' />
-        <Footer/>
     </div>
 }
 

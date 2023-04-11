@@ -16,12 +16,12 @@ import {
 } from '@chakra-ui/react';
 import { useContext, useEffect, useState } from 'react';
 import {Navigate, useNavigate } from 'react-router-dom';
-import { Alert , AlertIcon , AlertDescription , AlertTitle } from "@chakra-ui/react"
 import { AuthContext } from '../Context/AuthContext';
 
 import {Link as RouterLink} from 'react-router-dom'
+import axios from 'axios';
   
-  export default function Login() {
+  export default function AdminLogin() {
     window.scrollTo({
       top: 0,
     });
@@ -30,7 +30,7 @@ import {Link as RouterLink} from 'react-router-dom'
 
     const [email,setEmail] = useState("");
     const [password , setPassword] = useState("");
-    const {isAuth , login} = useContext(AuthContext)
+    const {AdminLogin} = useContext(AuthContext)
 
     let navigate = useNavigate()
 
@@ -39,16 +39,35 @@ import {Link as RouterLink} from 'react-router-dom'
     const handleSubmit = (e)=>{
 
       e.preventDefault()
-      login()
-      toast({
-        title: 'Login Successfull.',
-        description: "We've created your account for you.",
-        status: 'success',
-        position : 'top',
-        duration: 2000,
-        isClosable: true,
+      let obj={
+        email,
+        password
+      }
+      axios.post('https://reqres.in/api/login',obj)
+      .then((res)=>{
+        toast({
+            title: 'Login Successfull.',
+            description: "Admin Login Successfull.",
+            status: 'success',
+            position : 'top',
+            duration: 2000,
+            isClosable: true,
+        })
+        AdminLogin()
+        navigate('/adminpage')
+
+
       })
-      navigate("/")
+      .catch((err)=>{
+        toast({
+            title: 'Wrong Credential.',
+            description: "You entered wrong credentials",
+            status: 'error',
+            position : 'top',
+            duration: 2000,
+            isClosable: true,
+        })
+      })
       
     }
     
@@ -61,10 +80,7 @@ import {Link as RouterLink} from 'react-router-dom'
         bg={useColorModeValue('gray.50', 'gray.800')}>
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
-            <Heading fontSize={'4xl'}>Login</Heading>
-            <Text fontSize={'lg'} color={'gray.600'}>
-              Wearex takes your <Link color={'blue.400'}>Privacy & Policy</Link> 
-            </Text>
+            <Heading fontSize={'4xl'}>Admin Login Page</Heading>
           </Stack>
           <Box
             rounded={'lg'}
@@ -98,9 +114,6 @@ import {Link as RouterLink} from 'react-router-dom'
                   }}>
                   Login in
                 </Button>
-                <Center>
-                  <RouterLink to='/adminlogin' ><Link color={'blue.400'}>Signin as Admin</Link></RouterLink>
-                </Center>
               </Stack>
             </Stack>
           </Box>
