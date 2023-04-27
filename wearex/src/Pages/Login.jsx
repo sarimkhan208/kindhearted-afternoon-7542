@@ -286,6 +286,9 @@ export default function SignIn() {
             <Text fontSize={'lg'} color={'blue.400'} >
               <RouterLink to='/signup' color={'blue.400'} _hover={{cursor:'pointer'}}>Create an account</RouterLink> 
             </Text>
+            <Text mt={4} fontSize={'lg'} color={'blue.400'} >
+              <RouterLink to='/adminlogin' color={'blue.400'} _hover={{cursor:'pointer'}}>Sign in as Admin</RouterLink> 
+            </Text>
           </Stack>
         </Box>
       </Stack>
