@@ -1,7 +1,6 @@
 import {useEffect, useState } from "react"
-import { Box, Button,Center, SimpleGrid, } from '@chakra-ui/react'
+import { Box, Button,Center, SimpleGrid,Image } from '@chakra-ui/react'
 import WomensProductCard from "./WomensProductCard"
-import LoadingSkeleton from '../../Loading/Skeleton'
 import WomensProductSubNavbar from "./WomensProductSubNavbar"
 import WomensProductSidebar from "./WomensProductSidebar"
 import { getProductWomens } from "../../Redux/WomensProduct/action"
@@ -13,6 +12,7 @@ export default function MensProduct(){
     const [page , setPage] = useState(1)
     const dispatch = useDispatch()
     let data = useSelector((state)=>state.womensProductReducer.data)
+    let isLoading = useSelector((state)=>state.womensProductReducer.isLoading)
     const [params,setParams] = useSearchParams()
     const location = useLocation()
 
@@ -75,13 +75,19 @@ export default function MensProduct(){
                 </div>
                 {/* ------Rigth Side------ */}
                 <div>
-                <SimpleGrid pl={2} gridTemplateColumns={{base:'repeat(2,1fr)' , sm:'32% 32% 32%'}} gap={{base:'0px',sm:'15px'}} >
+                {isLoading?<Image
+                    src="https://i.stack.imgur.com/hzk6C.gif"
+                    alt="loading"
+                    margin="auto"
+                    paddingTop="90px"
+                    marginBottom="360px"
+                    />:<SimpleGrid pl={2} gridTemplateColumns={{base:'repeat(2,1fr)' , sm:'32% 32% 32%'}} gap={{base:'0px',sm:'15px'}} >
                     {
                         data.map((el)=>(
                             <WomensProductCard key={el.id} {...el}/>
                         ))
                     }
-                </SimpleGrid>
+                </SimpleGrid>}
                 </div>
             </Box>
             <Center>
@@ -105,6 +111,7 @@ export default function MensProduct(){
 
                             >  Prev </Button>
                     <Button 
+                            isDisabled = {page==1}
                             mx='7px'
                             my='20px'
                             borderColor = 'gray.900'
@@ -128,7 +135,7 @@ export default function MensProduct(){
                             onClick={()=>handleClick(1)}
                             height={{base:"20px",md:"40px"}}
                             width={{base:"5px",md:"55px"}}
-                            // disabled={page == (data.length/10)}
+                            isDisabled = {data.length<8}
                             bg='gray.900'
                             color='white'
                             border='1px'

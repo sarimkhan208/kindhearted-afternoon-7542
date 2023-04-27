@@ -14,9 +14,10 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
-    Input,chakra, useConst , Avatar
+    Input,chakra, useConst , Avatar,useToast,VStack
   } from '@chakra-ui/react';
   import { FiShoppingCart } from 'react-icons/fi';
+  import {FiUser} from 'react-icons/fi'
   import {
     HamburgerIcon,
     CloseIcon,
@@ -27,15 +28,32 @@ import {
   import axios from 'axios';
   import {BaseURL} from '../BaseURL/BaseURL'
 
-import {Link as RouterLink } from 'react-router-dom';
+import {Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
+
+
+// <Avatar onClick={handleLogout} mt={{base:2,sm:1}} width={{base:'30px' , sm:'40px'}} height={{base:'30px' , sm:'40px'}} src='https://bit.ly/broken-link' />
+
+
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
-    const {isAuth,logout} = useContext(AuthContext)
+    const {isAuth,googleSignOut,displayName} = useContext(AuthContext)
+
+    const navigate = useNavigate()
+    const toast = useToast()
 
     const handleLogout = ()=>{
-      logout()
+      toast({
+        title: 'Logout Successfull.',
+        description: "User has been Logout",
+        status: 'error',
+        position : 'top',
+        duration: 1200,
+        isClosable: true,
+      })
+      navigate("/")
+      googleSignOut()
     }
 
     
@@ -89,7 +107,7 @@ import { AuthContext } from '../Context/AuthContext';
             spacing={6}> 
                  <RouterLink to='/cartitem' >
                   <Box display='flex' mt={3} >
-                    <Icon  as={FiShoppingCart} h={{base:5,md:7}} w={{base:5,md:7}} alignSelf={'center'} />
+                    <Icon  as={FiShoppingCart} h={{base:5,md:7}} w={{base:5,md:7}} alignSelf={'center'}  mr={0} pr={0} />
                   </Box>
                  </RouterLink>
             
@@ -97,7 +115,11 @@ import { AuthContext } from '../Context/AuthContext';
             
 
               {
-                isAuth?<Avatar onClick={handleLogout} mt={{base:2,sm:1}} width={{base:'30px' , sm:'40px'}} height={{base:'30px' , sm:'40px'}} src='https://bit.ly/broken-link' />:<RouterLink to='/login'><Button
+                isAuth?<Box _hover={{cursor:'pointer'}} height={'100%'} width={{base:"50px",sm:'70px'}} ><VStack gap={0} >
+                  <Box width={'100%'} textAlign={'center'} ><Icon fontSize={{base:'14px',sm:'24px'}} as={FiUser} onClick={handleLogout} /></Box>
+                  <Box width={'100%'} textAlign={'center'} fontSize={{base:'10px',sm:'13px'}} >{displayName}</Box>
+                  
+                  </VStack></Box>:<RouterLink to='/login'><Button
                 display={{ base: 'inline-flex', md: 'inline-flex' }}
                 fontSize={{base:'10px',sm:'sm'}}
                 fontWeight={600}

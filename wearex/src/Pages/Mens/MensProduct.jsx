@@ -1,5 +1,5 @@
-import {useEffect, useState } from "react"
-import { Box, Button,Center, SimpleGrid, } from '@chakra-ui/react'
+import {useEffect, useState ,useContext} from "react"
+import { Box, Button,Center, SimpleGrid, Image} from '@chakra-ui/react'
 import MensProductCard from "./MensProductCard"
 import LoadingSkeleton from '../../Loading/Skeleton'
 import MensProductsSubNavbar from "./MensProductsSubNavbar"
@@ -13,7 +13,7 @@ export default function MensProduct(){
     const [page , setPage] = useState(1)
     const dispatch = useDispatch()
     let data = useSelector((state)=>state.mensProductReducer.data)
-    // const isLoading = useSelector((state)=>state.mensProductReducer.isLoading)
+    const isLoading = useSelector((state)=>state.mensProductReducer.isLoading)
     const [params,setParams] = useSearchParams()
     const location = useLocation()
 
@@ -64,6 +64,7 @@ export default function MensProduct(){
         dispatch(getProductMens(obj))
     },[location,page])
 
+
     return (<div>
         
             <MensProductsSubNavbar/>
@@ -75,19 +76,27 @@ export default function MensProduct(){
                 <MensProductSidebar/>
                 </div>
                 {/* ------Rigth Side------ */}
-                <div>
-                <SimpleGrid pl={2} gridTemplateColumns={{base:'repeat(2,1fr)' , sm:'32% 32% 32%'}} gap={{base:'0px',sm:'15px'}} >
-                    {
-                        data.map((el)=>(
-                            <MensProductCard key={el.id} {...el}/>
-                        ))
-                    }
-                </SimpleGrid>
-                </div>
+                {
+                    isLoading?<Image
+                    src="https://i.stack.imgur.com/hzk6C.gif"
+                    alt="loading"
+                    margin="auto"
+                    paddingTop="90px"
+                    marginBottom="360px"
+                    />:<div>
+                    <SimpleGrid pl={2} gridTemplateColumns={{base:'repeat(2,1fr)' , sm:'32% 32% 32%'}} gap={{base:'0px',sm:'15px'}} >
+                        {
+                            data.map((el)=>(
+                                <MensProductCard key={el.id} {...el}/>
+                            ))
+                        }
+                    </SimpleGrid>
+                    </div>
+                }
             </Box>
             <Center>
                 <Button     rounded={'none'}
-                            disabled = {page==1}
+                            isDisabled = {page==1}
                             onClick={()=>handleClick(-1)}
                             height={{base:"20px",md:"40px"}}
                             width={{base:"5px",md:"55px"}}
@@ -129,7 +138,7 @@ export default function MensProduct(){
                             onClick={()=>handleClick(1)}
                             height={{base:"20px",md:"40px"}}
                             width={{base:"5px",md:"55px"}}
-                            // disabled={page == (data.length/10)}
+                            isDisabled = {data.length<8}
                             bg='gray.900'
                             color='white'
                             border='1px'

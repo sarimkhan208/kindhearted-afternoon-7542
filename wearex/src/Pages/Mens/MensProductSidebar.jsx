@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import { Accordion,AccordionButton,AccordionItem,AccordionIcon,AccordionPanel, HStack} from "@chakra-ui/react"
 import { Box,Checkbox, CheckboxGroup,VStack } from '@chakra-ui/react'
 import { useSearchParams } from 'react-router-dom'
+
 const MensProductSidebar = () => {
+
 
   const [params,setParams] = useSearchParams()
   const initialCategory = params.getAll("category")

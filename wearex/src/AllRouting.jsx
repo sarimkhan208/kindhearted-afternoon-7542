@@ -23,6 +23,7 @@ import AdminPageWomensEditProduct from './Pages/Admin/Womens/AdminPageWomensEdit
 import AdminLogin from './Pages/AdminLogin'
 import PrivateRouteAdmin from './Context/PrivateRouteAdmin'
 import PrivateRoute from './Context/PrivateRoute'
+import SignUp from './Pages/SignUp'
 
 export default function AllRouting(){
     return <>
@@ -53,6 +54,7 @@ export default function AllRouting(){
 
         
         <Route path='/login' element={<Login/>} ></Route>
+        <Route path='/signup' element={<SignUp/>} ></Route>
         <Route path='/adminlogin' element={<AdminLogin/>} ></Route>
 
         <Route path='/cartitem' element={<CartItem/>} ></Route>

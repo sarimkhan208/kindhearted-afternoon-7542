@@ -1,5 +1,5 @@
 import {useEffect, useState } from "react"
-import { Box, Button,Center, SimpleGrid, } from '@chakra-ui/react'
+import { Box, Button,Center, SimpleGrid,Image } from '@chakra-ui/react'
 import KidsProductCard from './KidsProductCard'
 import { getProductKids } from "../../Redux/Kids/action"
 import {useDispatch, useSelector} from 'react-redux'
@@ -15,6 +15,7 @@ export default function KidsProduct(){
     const [page , setPage] = useState(1)
     const dispatch = useDispatch()
     let data = useSelector((state)=>state.kidsProductReducer.data)
+    let isLoading = useSelector((state)=>state.kidsProductReducer.isLoading)
     const [params,setParams] = useSearchParams()
     const location = useLocation()
 
@@ -76,7 +77,13 @@ export default function KidsProduct(){
                 <KidsProductSidebar/>
                 </div>
                 {/* ------Rigth Side------ */}
-                <div>
+               { isLoading?<Image
+                    src="https://i.stack.imgur.com/hzk6C.gif"
+                    alt="loading"
+                    margin="auto"
+                    paddingTop="90px"
+                    marginBottom="360px"
+                    />:<div>
                 <SimpleGrid pl={2} gridTemplateColumns={{base:'repeat(2,1fr)' , sm:'32% 32% 32%'}} gap={{base:'0px',sm:'15px'}} >
                     {
                         data.map((el)=>(
@@ -84,11 +91,11 @@ export default function KidsProduct(){
                         ))
                     }
                 </SimpleGrid>
-                </div>
+                </div>}
             </Box>
             <Center>
                 <Button     rounded={'none'}
-                            disabled = {page==1}
+                            isDisabled = {page==1}
                             onClick={()=>handleClick(-1)}
                             height={{base:"20px",md:"40px"}}
                             width={{base:"5px",md:"55px"}}
@@ -127,6 +134,7 @@ export default function KidsProduct(){
                             >{page} 
                             </Button>
                             <Button rounded={'none'}
+                            isDisabled = {data.length<8}
                             onClick={()=>handleClick(1)}
                             height={{base:"20px",md:"40px"}}
                             width={{base:"5px",md:"55px"}}
