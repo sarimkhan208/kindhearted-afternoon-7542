@@ -1,4 +1,6 @@
-# kindhearted-afternoon-7542
+# Wearex
+Wearex is an e-commerce website were you can buy your fashionable clothes
+
 <h1>tech stack - REACT.JS CSS CHAKRA UI</h1> <br/>
 <h3>Github Link</h3 - https://github.com/sarimkhan208/kindhearted-afternoon-7542  <br/>
  <h3>Deploy Link</h3> - https://wearex.vercel.app/  <br/>
